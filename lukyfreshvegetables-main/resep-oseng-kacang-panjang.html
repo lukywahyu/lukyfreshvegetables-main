@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resep Oseng Kacang Panjang & Teri | LukyFresh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="icon" type="image/png" href="gren.png">
+    <style>
+        :root {
+            --primary-color: #4CAF50; /* Hijau Segar */
+            --secondary-color: #81c784; /* Hijau Muda */
+            --accent-color: #FFC107; /* Kuning Cerah */
+            --text-color: #333;
+            --text-light: #fff;
+            --background-light: #f4fcf4;
+            --card-bg-light: #f9fbe7;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-dark: rgba(0, 0, 0, 0.25);
+
+            /* Variabel untuk Dark Mode */
+            --bg-dark: #121212;
+            --text-dark: #E0E0E0;
+            --card-bg-dark: #1E1E1E;
+            --shadow-dark-mode: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--background-light);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+        body.dark-mode .navbar, body.dark-mode .footer {
+            background-color: #212121;
+        }
+        body.dark-mode .navbar-container a {
+            color: var(--text-dark);
+        }
+        body.dark-mode .products, body.dark-mode .advantages, body.dark-mode .social-media, body.dark-mode .about, body.dark-mode .recipes, body.dark-mode .testimonials {
+            background-color: #1a1a1a;
+            box-shadow: 0 5px 15px var(--shadow-dark-mode);
+        }
+        body.dark-mode .product-item, body.dark-mode .recipe-item, body.dark-mode .testimonial-item {
+            background-color: var(--card-bg-dark);
+            box-shadow: 0 4px 12px var(--shadow-dark-mode);
+        }
+        body.dark-mode h2, body.dark-mode h3 {
+            color: var(--accent-color);
+        }
+        body.dark-mode .price, body.dark-mode .description {
+            color: var(--text-dark);
+        }
+        body.dark-mode .btn-buy, body.dark-mode .btn-recipe {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        body.dark-mode .btn-buy:hover, body.dark-mode .btn-recipe:hover {
+            background-color: #388e3c;
+        }
+        body.dark-mode .about-text a {
+            color: var(--text-color);
+            background-color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--card-bg-light);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 80px;
+            height: 5px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+            transform: translateX(-50%);
+        }
+
+        .recipe-image {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 0 auto 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px var(--shadow-dark);
+            transition: transform 0.3s ease;
+        }
+        .recipe-image:hover {
+            transform: scale(1.02);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+        
+        /* Video Section Styling */
+        .video-container {
+            text-align: center;
+            margin: 40px auto;
+            background-color: var(--background-light);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px var(--shadow-light);
+        }
+        .video-container h2 {
+            margin-bottom: 20px;
+        }
+        
+        .video-player {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px var(--shadow-dark);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Resep Oseng Kacang Panjang & Teri</h1>
+    <img src="https://res.cloudinary.com/dhcydygfx/image/upload/v1755740215/osengkacangpanjang_ap7jns.png" alt="Oseng Kacang Panjang & Teri" class="recipe-image">
+    
+    <h2 class="section-title">Bahan-bahan:</h2>
+    <ul>
+        <li>200 gr kacang panjang, potong-potong</li>
+        <li>50 gr ikan teri, goreng sebentar</li>
+        <li>3 siung bawang putih, iris tipis</li>
+        <li>4 siung bawang merah, iris tipis</li>
+        <li>3 buah cabai merah, iris serong</li>
+        <li>5 buah cabai rawit (opsional), iris serong</li>
+        <li>1 lembar daun salam</li>
+        <li>1 cm lengkuas, memarkan</li>
+        <li>1 sdm kecap manis</li>
+        <li>Garam secukupnya</li>
+        <li>Gula pasir secukupnya</li>
+        <li>Minyak goreng secukupnya</li>
+        <li>50 ml air</li>
+    </ul>
+    
+    <h2 class="section-title">Cara membuat:</h2>
+    <ol>
+        <li>Panaskan sedikit minyak, tumis bawang merah dan bawang putih hingga harum.</li>
+        <li>Masukkan cabai, daun salam, dan lengkuas, aduk rata.</li>
+        <li>Tambahkan kacang panjang, aduk hingga setengah layu.</li>
+        <li>Masukkan ikan teri goreng, aduk rata.</li>
+        <li>Tuang sedikit air, bumbui dengan garam, gula, dan kecap manis.</li>
+        <li>Masak hingga bumbu meresap dan kacang panjang matang tetapi tetap renyah.</li>
+        <li>Angkat dan sajikan hangat bersama nasi.</li>
+    </ol>
+
+         <div class="video-container">
+            <h2>Tonton Video Cara Membuatnya</h2>
+            <video controls class="video-player">
+                <source src="https://res.cloudinary.com/dhcydygfx/video/upload/v1755846343/videosayur_w1qdva.mp4" type="video/mp4">
+                Maaf, browser Anda tidak mendukung pemutaran video ini.
+            </video>
+        </div>
+    </div>
+
+</body>
+</html>

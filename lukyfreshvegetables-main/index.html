@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LukyFresh | Sayur Segar dari Kebun ke Dapur Anda</title>
+    <meta name="description" content="LukyFresh menyediakan sayuran segar langsung dari kebun ke dapur Anda. Panen setiap hari, bebas pestisida, dan harga terjangkau.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dhcydygfx/image/upload/v1755740182/gren_r328hh.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+   <a href="https://wa.me/6285129981180?text=Halo,%20saya%20mau%20bertanya%20tentang%20produk%20LukyFresh" 
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+    <a href="#" id="scroll-to-top" class="scroll-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#hero" class="brand-logo">
+                <img src="https://res.cloudinary.com/dhcydygfx/image/upload/v1755740191/logo_frlwca.png" alt="Logo LukyFresh" class="logo">
+                <span>LukyFresh</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                <li><a href="#products"><i class="fas fa-carrot"></i> Produk</a></li>
+                <li><a href="#recipes"><i class="fas fa-utensils"></i> Resep</a></li>
+                <li><a href="#testimonials"><i class="fas fa-comment-dots"></i> Testimoni</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="custom-modal" class="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-btn">&times;</span>
+                <h3 class="modal-title">Pemberitahuan Penting!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Mohon maaf, saat ini website sedang dalam tahap pengembangan.</p>
+                <p>Untuk melanjutkan pembelian, silakan melalui WhatsApp saja.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-btn">Batal</button>
+                <button id="continue-btn">Lanjutkan ke WhatsApp</button>
+            </div>
+        </div>
+    </div>
+    
+    <header class="header" id="hero">
+        <div class="container">
+            <h1>Dari Kebun Langsung ke Dapur Anda</h1>
+            <p class="tagline">Kami menyediakan sayuran segar setiap hari. Kualitas terbaik, harga terjangkau.</p>
+            <a href="#products" class="btn btn-primary">Lihat Produk Lengkap</a>
+        </div>
+    </header>
+
+    <section class="info-section" id="about">
+        <div class="custom-container info-layout">
+            <div class="info-visual" data-aos="fade-right">
+                <img src="https://res.cloudinary.com/dhcydygfx/image/upload/v1755740187/kebunn_jyuqhj.jpg" alt="Petani LukyFresh sedang di kebun sayur segar" loading="lazy">
+            </div>
+            <div class="info-text" data-aos="fade-left">
+                <h2>Tentang Kami 🌱</h2>
+                <p><strong>LukyFresh</strong> adalah penyedia sayuran segar dari kebun di Lembang, Jawa Barat, langsung ke dapur Anda. Kami bekerja sama dengan petani lokal yang menerapkan praktik pertanian berkelanjutan dan bebas pestisida.</p>
+                <p>Setiap produk kami dipanen setiap hari dan dikemas dengan hati-hati untuk menjamin kesegaran dan nutrisi. Kami berkomitmen menyediakan sayuran yang aman, sehat, dan terjangkau untuk keluarga Anda.</p>
+                <p>Dengan membeli dari LukyFresh, Anda tidak hanya mendapatkan bahan makanan berkualitas, tetapi juga turut mendukung praktik pertanian lokal yang berkelanjutan. Mari wujudkan gaya hidup sehat bersama kami!</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Produk Kami 🥬</h2>
+            <div class="product-filters">
+                <button class="filter-btn active" data-category="all">Semua Produk</button>
+                <button class="filter-btn" data-category="daun">Sayuran Daun</button>
+                <button class="filter-btn" data-category="buah">Sayuran Buah</button>
+                <button class="filter-btn" data-category="rempah">Cabai & Rempah</button>
+            </div>
+            <div class="product-list"></div>
+        </div>
+    </section>
+
+    <section class="recipes" id="recipes">
+        <div class="container">
+            <h2>Resep & Inspirasi Masakan 🍲</h2>
+            <p class="recipe-intro">Dapatkan ide masakan segar setiap hari dengan produk dari LukyFresh!</p>
+            <div class="recipe-list"></div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Kata Pelanggan Kami ✨</h2>
+            <div class="testimonial-list"></div>
+        </div>
+    </section>
+
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <h2>Kenapa Pilih LukyFresh?</h2>
+            <div class="advantage-list">
+                <div class="advantage-item">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Panen Setiap Hari</h3>
+                    <p>Sayuran dikirim langsung setelah dipanen, menjamin kesegaran maksimal.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Pengiriman Cepat</h3>
+                    <p>Pesanan Anda akan tiba di hari yang sama atau keesokan harinya.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Harga kompetitif langsung dari petani, tanpa perantara.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Tanpa Pestisida</h3>
+                    <p>Kami berkomitmen untuk menyediakan sayuran yang aman dan sehat untuk keluarga Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-media" id="contact">
+        <div class="container">
+            <h2>Ikuti Kami & Hubungi Kami</h2>
+            <div class="social-links" data-aos="zoom-in">
+              <a href="https://wa.me/6285129981180" target="_blank" class="social-icon whatsapp" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+                <a href="http://tiktok.com/@lukyfreshvegetables" target="_blank" class="social-icon tiktok" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61566898997287" target="_blank" class="social-icon facebook" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/lukyfresh.id" target="_blank" class="social-icon instagram" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 LukyFresh. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+
+</body>
+</html>

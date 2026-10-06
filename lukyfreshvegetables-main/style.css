@@ -1,0 +1,685 @@
+:root {
+    --primary-color: #adf22c; /* Warna hijau utama yang baru */
+    --secondary-color: #c0f47e; /* Warna hijau sekunder yang disesuaikan */
+    --accent-color: #FFC107; /* Warna aksen kuning */
+    --text-color: #333;
+    --text-light: #fff;
+    --background-light: #f4fcf4;
+    --card-bg-light: #f9fbe7;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.25);
+
+    /* Variabel untuk Dark Mode */
+    --bg-dark: #121212;
+    --text-dark: #E0E0E0;
+    --card-bg-dark: #1E1E1E;
+    --shadow-dark-mode: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+body.dark-mode .navbar, body.dark-mode .footer {
+    background-color: #212121;
+}
+body.dark-mode .navbar-container a {
+    color: var(--text-dark);
+}
+body.dark-mode .products, body.dark-mode .advantages, body.dark-mode .social-media, body.dark-mode .info-section, body.dark-mode .recipes, body.dark-mode .testimonials {
+    background-color: #1a1a1a;
+    box-shadow: 0 5px 15px var(--shadow-dark-mode);
+}
+body.dark-mode .product-item, body.dark-mode .recipe-item, body.dark-mode .testimonial-item {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 12px var(--shadow-dark-mode);
+}
+body.dark-mode h2, body.dark-mode h3 {
+    color: var(--accent-color);
+}
+body.dark-mode .price, body.dark-mode .description {
+    color: var(--text-dark);
+}
+body.dark-mode .btn-buy, body.dark-mode .btn-recipe {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+body.dark-mode .btn-buy:hover, body.dark-mode .btn-recipe:hover {
+    background-color: #388e3c;
+}
+body.dark-mode .info-text a {
+    color: var(--text-color);
+    background-color: var(--accent-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar (Menu Navigasi) */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.navbar .brand-logo .logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Header (Hero Section) */
+.header {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/dhcydygfx/image/upload/v1755740209/hero-bg_brrhdk.png') no-repeat center center/cover;
+    color: var(--text-light);
+    text-align: center;
+    padding: 8rem 0;
+    animation: fadeIn 1.5s ease-out;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px var(--shadow-dark);
+    line-height: 1.2;
+}
+
+.header .tagline {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #FFD54F;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Utama */
+.info-section, .products, .advantages, .social-media, .testimonials, .recipes {
+    padding: 4rem 0;
+    background-color: var(--text-light);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    margin: 40px auto;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 80px;
+    height: 5px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    transform: translateX(-50%);
+}
+
+/* Tentang Kami */
+.info-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.info-text {
+    flex: 1;
+    order: 1;
+    min-width: 300px;
+}
+
+.info-visual {
+    flex: 1;
+    order: 2;
+    min-width: 300px;
+}
+
+.info-visual img {
+    width: 100%;
+    height: auto;
+    height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Produk & Filter */
+.product-filters {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.filter-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.filter-btn:hover {
+    background-color: #66bb6a;
+}
+.filter-btn.active {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.product-item {
+    background-color: var(--card-bg-light);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    color: #2e7d32;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.product-info .price {
+    font-weight: 600;
+    color: #e65100;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product-info .description {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.product-item .btn-buy {
+    margin-top: auto;
+}
+
+.btn-buy, .btn-recipe {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px var(--shadow-light);
+    display: inline-block;
+}
+
+.btn-buy:hover, .btn-recipe:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* Resep */
+.recipe-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+}
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.recipe-item {
+    background-color: var(--card-bg-light);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.recipe-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.recipe-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.btn-recipe {
+    margin-top: 15px;
+}
+
+/* Testimoni */
+.testimonials {
+    background-color: #e8f5e9;
+}
+.testimonial-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.testimonial-item {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.testimonial-item:hover {
+    transform: scale(1.03);
+}
+.testimonial-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-color);
+}
+.testimonial-item p {
+    font-style: italic;
+    color: #555;
+}
+.testimonial-item h4 {
+    margin: 10px 0 0;
+    color: var(--primary-color);
+}
+
+/* Keunggulan Section */
+.advantages {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-light);
+}
+
+.advantages h2 {
+    color: var(--text-light);
+}
+
+.advantages h2::after {
+    background-color: var(--accent-color);
+}
+
+.advantage-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.advantage-item i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.advantage-item h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Sosial Media */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px var(--shadow-dark);
+}
+
+.whatsapp { background-color: #25D366; }
+.tiktok { background-color: #000; }
+.facebook { background-color: #1877F2; }
+.instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 10px var(--shadow-light);
+}
+
+/* Tombol WhatsApp Mengambang */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Tombol Kembali ke Atas */
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+}
+
+/* Styling untuk Modal Pop-up */
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    opacity: 0;
+    animation: fadeInScale 0.3s forwards;
+}
+
+.modal-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.modal-title {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.modal-body p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.modal-footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#continue-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#continue-btn:hover {
+    background-color: #45a049;
+}
+
+#cancel-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#cancel-btn:hover {
+    background-color: #d32f2f;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Animasi */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    .navbar-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .navbar .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .products, .advantages, .social-media {
+        padding: 2rem 0;
+    }
+    /* Mengatur ukuran gambar produk agar konsisten 1:1 */
+.product-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+}
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+    .scroll-to-top {
+        bottom: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .info-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info-visual, .info-text {
+        order: unset;
+        text-align: left;
+    }
+    .info-visual {
+        margin-top: 20px;
+    }
+}
